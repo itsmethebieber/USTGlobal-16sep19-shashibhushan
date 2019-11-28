@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="hello" class="com.ustglobal.di.Hello" init-method="init"
+		destroy-method="destroy">
+		<property name="msg" value="I Am Groot"/>
+		<property name = "map">
+		<map>
+			<entry key="one" value="1" />
+			<entry key="two" value="2" />
+		</map>
+		</property>
+	</bean>
+
+
+	<bean id="panda" class="com.ustglobal.di.Panda">
+	</bean>
+
+	<bean id="human" class="com.ustglobal.di.Human" primary="true">
+	</bean>
+
+	<bean id="animal" class="com.ustglobal.di.Cat">
+	</bean>
+
+	<bean id="pet" class="com.ustglobal.di.Pet" autowire="byName">
+		<property name="name" value="dragon warrior"></property>
+		<!-- <property name="animal" vref="panda"></property> -->
+		<!--<constructor-arg name = "name" value ="dragon warrior"></constructor-arg> -->
+		<!-- <constructor-arg name = "animal" vref ="panda"></constructor-arg> -->
+	</bean>
+
+	<bean id="beanPostProcessor"
+		class=" com.ustglobal.di.BeanPostProcessorClass">
+	</bean>
+
+	<bean id="beanFactoryPostProcessor"
+		class=" com.ustglobal.di.BeanFactoryPostProcesserClass">
+	</bean>
+
+
+</beans> 
