@@ -1,0 +1,38 @@
+<form action="" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm" (ngSubmit)="searchByName(form)">
+        <h1 class="text-center bg-dark text-white">SearchByName</h1>
+    
+        <div class="form-group">
+            <input type="text" name="name" id="name" class="form-control" placeholder="Enter Product Name"
+                #name="ngModel" ngModel required>
+              
+        </div>
+        <div class="form-group">
+            <button  class="btn-outline-success float-right" [disabled]="form.invalid">search</button>
+        </div>
+    </form>
+
+     <table class="table table-bordered table-striped table-primary col-md-8 offset-2" >
+            <thead>
+              <tr class="text-center text-dark">
+                <th>Id</th>
+                <th>Name</th>
+                <th>category</th>
+                <th>comapny</th>
+                <th>quantity</th>
+                <th>price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="priducts.id!==0; index as i">              
+                 <td>{{products.id}}</td>
+                 <td>{{products.name}}</td>
+                 <td>{{products.category}}</td>
+                 <td>{{products.company}}</td>  
+                 <td>{{products.quantity}}</td>  
+                 <td>{{products.company}}</td> 
+                 <td>{{products.price}}</td>    
+             </tr>
+            </tbody>
+      </table>
+       -->
+    

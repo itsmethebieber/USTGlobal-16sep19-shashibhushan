@@ -1,0 +1,36 @@
+<form action="" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm" (ngSubmit)=" updateProducts(form)">
+    <h1 class="text-center bg-dark text-white">updateProduct</h1>
+
+        <div class="form-group">
+                <div class="form-group">
+                        <input type="number" name="id" id="id" class="form-control" placeholder="Enter product Id"
+                            #id="ngModel" ngModel required>
+                    </div>
+
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter product name"
+                    #name="ngModel" ngModel required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="category" id="category" class="form-control" placeholder="Enter category"
+                    #category="ngModel" ngModel required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="company" id="company" class="form-control" placeholder="Enter company Name"
+                    #company="ngModel" ngModel required>
+            </div>
+    
+            <div class="form-group">
+                <input type="text" name="quantity" id="quantity" class="form-control" placeholder="Enter quantity"
+                    #quantity="ngModel" ngModel required>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="price" id="price" class="form-control" placeholder="Enter Price"
+                    #price="ngModel" ngModel required>
+            </div>
+        
+    <div class="form-group">
+        <button type="submit" class="btn-outline-success float-right" [disabled]="form.invalid" >updateProduct</button>
+    </div>
+</form>
